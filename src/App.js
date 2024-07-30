@@ -11,12 +11,12 @@ import './stylesheets/App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename='/'>
       <div className="app">
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/our-services" element={<OurServices />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact-us" element={<ContactUs />} />
