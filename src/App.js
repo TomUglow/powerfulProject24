@@ -11,7 +11,7 @@ import './stylesheets/App.css';
 
 const App = () => {
   return (
-    <Router basename="/powerfulProject24">
+    <Router>
       <div className="app">
         <Header />
         <main>

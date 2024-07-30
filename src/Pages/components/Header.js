@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link'; // Import HashLink for smooth scrolling
 import '../../stylesheets/Header.css';
-import logo from '../../assets/logos/icon_black and white.jpg';
+import logo from '../../assets/logos/icon_blackandwhite.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
