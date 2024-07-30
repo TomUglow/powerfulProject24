@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../../stylesheets/Header.css';
 import logo from '../../assets/logos/icon_black and white.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,20 +20,19 @@ function Header() {
 
   return (
     <div className="header">
-      <a href='/'><img src={logo} alt="Company Logo" /></a>
+      <Link to="/"><img src={logo} alt="Company Logo" /></Link>
       <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <nav>
           <ul className='nav-dropdown'>
-            <li><a href="/">Home</a></li>
+            <li><Link to="/">Home</Link></li>
             <li className="dropdown">
-              <a href="/our-services" className="dropbtn">
+              <Link to="/our-services" className="dropbtn" onClick={handleDropdownToggle}>
                 Our Services
                 <FontAwesomeIcon 
                   icon={isDropdownOpen ? faAngleUp : faAngleDown} 
-                  onClick={handleDropdownToggle}
                   className="chevron-icon"
                 />
-              </a>
+              </Link>
               <div className={`dropdown-content ${isDropdownOpen ? 'active' : ''}`}>
                 <Link smooth to="/our-services#electrical-maintenance">Electrical Maintenance</Link>
                 <Link smooth to="/our-services#building-projects">Building Projects</Link>
@@ -42,8 +41,8 @@ function Header() {
                 <Link smooth to="/our-services#security">Security</Link>
               </div>
             </li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
           </ul>
         </nav>
       </div>
