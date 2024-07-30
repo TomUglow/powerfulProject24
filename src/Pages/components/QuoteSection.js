@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../../stylesheets/QuoteSection.css';
-import QuoteSectionImage from '../../assets/images/Pitch_AlphingtonDeck_External.jpg'
+import QuoteSectionImage from '../../assets/images/Pitch_AlphingtonDeck_External.jpg';
 
 const QuoteSection = () => {
   return (
@@ -12,7 +13,9 @@ const QuoteSection = () => {
         <h2>WHY US?</h2>
         <h1>We get it done.</h1>
         <p>Every project comes with its own needs and challenges. Tell us your priorities, and we'll fill them to your satisfaction.</p>
-        <button onClick={() => (window.location.href = "/contact-us")}>Get A Free Quote</button>
+        <Link to="/contact-us">
+          <button type="button">Get A Free Quote</button>
+        </Link>
       </div>
     </div>
   );
