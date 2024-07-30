@@ -24,6 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "cp public/CNAME build/CNAME && cp public/.nojekyll build/.nojekyll",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
