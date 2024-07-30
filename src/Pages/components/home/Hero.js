@@ -1,6 +1,7 @@
 import React from 'react';
-import '../../../stylesheets/Hero.css'
-import heroLogo from '../../../assets/logos/white_no background.png'
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import '../../../stylesheets/Hero.css';
+import heroLogo from '../../../assets/logos/white_no background.png';
 
 const Hero = () => {
   return (
@@ -10,11 +11,14 @@ const Hero = () => {
         <p>
         Our electricians provide exceptional service and assistance at competitive rates. Every project we undertake is backed by our guarantee and meets the most stringent industry regulations.
         </p>
-        <button onClick={() => (window.location.href = "/our-services")}>
-        View Our Services
-        </button>
+        <Link to="/our-services">
+          <button>
+            View Our Services
+          </button>
+        </Link>
     </div>
   );
 };
 
 export default Hero;
+

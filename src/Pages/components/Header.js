@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { HashLink as Link } from 'react-router-hash-link'; // Import HashLink for smooth scrolling
 import '../../stylesheets/Header.css';
 import logo from '../../assets/logos/icon_black and white.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

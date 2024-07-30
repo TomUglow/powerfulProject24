@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../../../stylesheets/PhotoGrid.css';
 import ProjectsImage1 from '../../../assets/images/YDM_HiveBuilding-9.jpg';
 import ProjectsImage2 from '../../../assets/images/Pitch_Tucker House_TV Room_2_2022.jpg';
@@ -16,9 +17,11 @@ const PhotoGrid = () => {
             <div className="grid-item grid-item--text">
                 <h1>Recent Projects</h1>
                 <p>Every project comes with its own needs and challenges. Tell us your priorities, and we'll fill them to your satisfaction.</p>
-                <button type="button" className="more-projects">
-                    More Projects
-                </button>
+                <Link to="/projects">
+                    <button type="button" className="more-projects">
+                        More Projects
+                    </button>
+                </Link>
             </div>
             <figure className="grid-item grid-item--3">
                 <img src={ProjectsImage4} alt="Recent Projects 4" />
