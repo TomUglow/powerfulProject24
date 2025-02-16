@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { HashLink as Link } from 'react-router-hash-link'; // Import HashLink for smooth scrolling
+import React, { useState, useEffect } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import '../../stylesheets/Header.css';
 import logo from '../../assets/logos/icon_blackandwhite.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,10 +13,31 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleDropdownToggle = (e) => {
-    e.preventDefault();
+  const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const handleDropdownLinkClick = () => {
+    setIsDropdownOpen(false);
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isDropdownOpen) {
+        setIsDropdownOpen(false);
+      }
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isDropdownOpen, isMenuOpen]);
 
   return (
     <div className="header">
@@ -26,24 +47,23 @@ function Header() {
           <ul className='nav-dropdown'>
             <li><Link to="/">Home</Link></li>
             <li className="dropdown">
-              <Link to="/our-services" className="dropbtn">
+              <Link to="/our-services" className="dropbtn" onClick={handleDropdownToggle}>
                 Our Services
+                <FontAwesomeIcon
+                  icon={isDropdownOpen ? faAngleUp : faAngleDown}
+                  className="chevron-icon"
+                />
               </Link>
-              <FontAwesomeIcon 
-                icon={isDropdownOpen ? faAngleUp : faAngleDown} 
-                className="chevron-icon"
-                onClick={handleDropdownToggle}
-              />
               <div className={`dropdown-content ${isDropdownOpen ? 'active' : ''}`}>
-                <Link smooth to="/our-services#electrical-maintenance">Electrical Maintenance</Link>
-                <Link smooth to="/our-services#building-projects">Building Projects</Link>
-                <Link smooth to="/our-services#data-and-phone">Data and Phone</Link>
-                <Link smooth to="/our-services#heating-and-cooling">Heating and Cooling</Link>
-                <Link smooth to="/our-services#security">Security</Link>
+                <Link smooth to="/our-services#electrical-maintenance" onClick={handleDropdownLinkClick}>Electrical Maintenance</Link>
+                <Link smooth to="/our-services#building-projects" onClick={handleDropdownLinkClick}>Building Projects</Link>
+                <Link smooth to="/our-services#data-and-phone" onClick={handleDropdownLinkClick}>Data and Phone</Link>
+                <Link smooth to="/our-services#heating-and-cooling" onClick={handleDropdownLinkClick}>Heating and Cooling</Link>
+                <Link smooth to="/our-services#security" onClick={handleDropdownLinkClick}>Security</Link>
               </div>
             </li>
-            <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/contact-us">Contact Us</Link></li>
+            <li><Link to="/projects" onClick={handleDropdownLinkClick}>Projects</Link></li> {/* Added onClick here */}
+            <li><Link to="/contact-us" onClick={handleDropdownLinkClick}>Contact Us</Link></li> {/* Added onClick here */}
           </ul>
         </nav>
       </div>
