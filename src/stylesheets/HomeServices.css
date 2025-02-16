@@ -9,7 +9,7 @@
   }
   
   .left-side {
-    width: 70vw; /* Each side takes up 50% */
+    width: 70%; /* Each side takes up 50% */
     position: relative; /* Overlays the image and box */
   }
   
@@ -22,15 +22,15 @@
   
   .overlay-box {
     position: absolute; /* Overlaps the image */
-    top: 38vw;
-    margin-left: 20%;
+    top: 80%;
+    margin-left: 15%;
     transform: translate(-50%, -50%); /* Center the box */
     background-color: #2994a8; /* Semi-transparent black */
     color: white;
     text-align: left;
     align-content: center;
     width: 12vw;
-    height: 14vw;
+    height: 25%;
     padding-left: 1.5rem;
   }
 
