@@ -29,6 +29,8 @@ ul {
 .nav-links li {
   position: relative; /* Needed for dropdown positioning */
   padding: 20px 10px;
+  display: flex;
+  align-items: center; /* Ensure items are aligned */
 }
 
 .nav-links a {

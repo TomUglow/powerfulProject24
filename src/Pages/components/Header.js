@@ -14,7 +14,7 @@ function Header() {
   };
 
   const handleDropdownToggle = (e) => {
-    e.preventDefault(); // Prevent default action to avoid navigation when clicking the chevron
+    e.preventDefault();
     setIsDropdownOpen(!isDropdownOpen);
   };
 
@@ -26,13 +26,14 @@ function Header() {
           <ul className='nav-dropdown'>
             <li><Link to="/">Home</Link></li>
             <li className="dropdown">
-              <Link to="/our-services" className="dropbtn" onClick={handleDropdownToggle}>
+              <Link to="/our-services" className="dropbtn">
                 Our Services
-                <FontAwesomeIcon 
-                  icon={isDropdownOpen ? faAngleUp : faAngleDown} 
-                  className="chevron-icon"
-                />
               </Link>
+              <FontAwesomeIcon 
+                icon={isDropdownOpen ? faAngleUp : faAngleDown} 
+                className="chevron-icon"
+                onClick={handleDropdownToggle}
+              />
               <div className={`dropdown-content ${isDropdownOpen ? 'active' : ''}`}>
                 <Link smooth to="/our-services#electrical-maintenance">Electrical Maintenance</Link>
                 <Link smooth to="/our-services#building-projects">Building Projects</Link>
