@@ -8,25 +8,25 @@ const testimonials = [
     id: 1,
     message:
       "I was so impressed with the quality of work and the professionalism of the team. They exceeded my expectations and delivered a project that was on time and on budget.",
-    customer: "John Doe - Happy Client",
+    customer: "Jacob W. - South Yarra",
   },
   {
     id: 2,
     message:
       "They were a pleasure to work with and I would highly recommend them to anyone looking for a reliable and trustworthy contractor.",
-    customer: "Jane Smith - Satisfied Customer",
+    customer: "Christopher H. - Ashburton",
   },
   {
     id: 3,
     message:
       "The project was completed to a high standard and they were always available to answer any questions I had. I will definitely be using them again in the future.",
-    customer: "Mike Brown - Loyal Customer",
+    customer: "Andrew P. - Geelong",
   },
   {
     id: 4,
     message:
       "They are a great company to work with and I am very happy with the results. I would not hesitate to recommend them to others.",
-    customer: "Sarah Jones - Pleased Customer",
+    customer: "Matthew H. - Carnegie",
   },
 ];
 

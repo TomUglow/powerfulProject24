@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../stylesheets/HomeServices.css'
-import ServicesImage from '../../../assets/images/Ben_and_Jake.png'
+import ServicesImage from '../../../assets/images/Ben_and_Jake.jpg'
 import ServiceItem from './ServiceItem';
 
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../../stylesheets/Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faHouse } from '@fortawesome/free-solid-svg-icons';
-import FacebookLogo from '../../assets/icons/facebook_white.png';
 import InstagramLogo from '../../assets/icons/instagram_white.png';
 import FooterLogo from '../../assets/logos/final_logo_black.jpg';
 
@@ -25,13 +24,10 @@ const Footer = () => {
             0408 425 907
             </h3>
             <div className='contact-links'>
-              <a href='https://facebook.com' className='footer-link' target="_blank" rel="noopener noreferrer">
-                <img src={FacebookLogo} alt='Facebook Logo' className='contact-logo' />
-              </a>
-              <a href='https://instagram.com' className='footer-link' target="_blank" rel="noopener noreferrer">
+              <a href='https://www.instagram.com/powerful.projects/' className='footer-link' target="_blank" rel="noopener noreferrer">
                 <img src={InstagramLogo} alt='Instagram Logo' className='contact-logo'/>
               </a>
-              <a href='mailto:your-email@example.com' className='footer-link'>
+              <a href='mailto:Ben@powerfulprojects.com.au' className='footer-link'>
                 <FontAwesomeIcon icon={faEnvelope} className='contact-logo'/>
               </a>
               <a href='tel:+0408425907' className='footer-link'>
@@ -52,3 +48,9 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// Ben to create Facebook profile
+// import FacebookLogo from '../../assets/icons/facebook_white.png';
+// <a href='https://facebook.com' className='footer-link' target="_blank" rel="noopener noreferrer">
+// <img src={FacebookLogo} alt='Facebook Logo' className='contact-logo' />
+// </a>
