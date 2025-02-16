@@ -7,7 +7,7 @@ import Image3 from '../../../assets/images/Data-unsplash.jpg';
 import Image4 from '../../../assets/images/Airconditioner_Repair.png';
 import Image5 from '../../../assets/images/Security-unsplash.jpg';
 
-const ServicesPage = () => {
+const OurServicesBody = () => {  // Component name: OurServicesBody
   const services = [
     {
       anchor: 'electrical-maintenance',
@@ -47,7 +47,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="services-page">
+    <div>
       {services.map((service, index) => (
         <div id={service.anchor} key={index}>
           <Service
@@ -63,4 +63,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default OurServicesBody; // Export name: OurServicesBody

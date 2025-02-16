@@ -1,9 +1,10 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import '../stylesheets/Projects.css';
 import ProjectsHead from './components/projects/ProjectsHead';
 import Project from './components/projects/ProjectsContent';
 import QuoteSection from './components/QuoteSection';
-import Logo from '../assets/logos/final_logo_black.jpg'
+import logo from '../assets/logos/icon_blackandwhite.jpg';
 
 import Project1_1 from '../assets/images/RS101185_websize.jpg';
 import Project1_2 from '../assets/images/RS101178_websize.jpg';
@@ -44,10 +45,23 @@ const projects = [
 const Projects = () => {
   return (
     <div className="projects-page">
+      <Helmet> {/* Add Helmet here */}
+        <title>Our Projects | Powerful Projects</title>
+        <meta name="description" content="Showcase of our recent electrical projects in Melbourne, Geelong, and Torquay." /> {/* Add description */}
+        <meta property="og:title" content="Our Projects | Powerful Projects" />
+        <meta property="og:description" content="Showcase of our recent electrical projects in Melbourne, Geelong, and Torquay." />
+        <meta property="og:image" content={"https://www.powerfulprojects.com.au" + logo} />
+        <meta property="og:url" content="https://www.powerfulprojects.com.au/projects" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Projects | Powerful Projects" />
+        <meta name="twitter:description" content="Showcase of our recent electrical projects in Melbourne, Geelong, and Torquay." />
+        <meta name="twitter:image" content={"https://www.powerfulprojects.com.au" + logo} />
+        <link rel="canonical" href="https://www.powerfulprojects.com.au/projects" />
+      </Helmet>
       <ProjectsHead />
       <div className="projects-content">
         <div className='projects-logo'>
-        <img src={Logo} alt='Powerful Projects logo'/>
+        <img src={logo} alt='Powerful Projects logo'/>
         </div>
         {projects.map((project) => (
           <Project key={project.id} images={project.images} projectName={project.projectName} description={project.description} location={project.location} />
